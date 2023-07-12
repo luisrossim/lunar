@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { ProfileRoutingModule } from './profile-routing.module';
 import { DataProfileComponent } from './data-profile/data-profile.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
   declarations: [
-    DataProfileComponent
+    DataProfileComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
