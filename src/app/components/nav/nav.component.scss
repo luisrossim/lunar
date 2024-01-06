@@ -1,0 +1,28 @@
+.navbar {
+    padding: 1rem 7rem 0.8rem 7rem;
+}
+
+.container-fluid {
+    padding: 0rem;
+}
+
+.navbar-brand {
+    background-color: transparent !important;
+    margin: 0;
+    padding: 0;
+    transition: 0.5s;
+    transition-timing-function: cubic-bezier(1,-0.80,-1,1.5);
+}
+
+.navbar:hover {
+    .navbar-brand {
+        rotate: 360deg;
+        font-size: 2.2rem;
+    }
+}
+
+@media(max-width: 768px){
+    .navbar {
+        padding: 1rem 2rem 0.8rem 2rem;
+    }
+}

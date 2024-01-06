@@ -1,0 +1,17 @@
+p {
+    margin: 0;
+}
+
+.footer {
+    padding: 2rem 7rem;
+}
+
+
+
+
+@media(max-width: 768px){
+    .footer {
+        align-items: center;
+        text-align: center;
+    }
+}

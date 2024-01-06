@@ -1,0 +1,30 @@
+<div class="page-container">
+    <div class="text-animation">
+        <p class="line typing-animation">lunar home works</p>
+    </div>
+    <div pAnimateOnScroll enterClass="scalein" leaveClass="fadeout"
+        class="card animation-duration-1000 animation-ease-in-out">
+        <p-carousel [value]="initMovies"
+            [numVisible]="5" [numScroll]="4"
+            [circular]="true" [responsiveOptions]="responsiveOptions">
+            <ng-template let-movie pTemplate="item">
+                <div class="mb-5 mt-5">
+                    <div *ngIf="loading" class="banner">
+                        <p-skeleton size="10rem" [style]="{background: '#333333'}">
+                        </p-skeleton>
+                    </div>
+                    <div *ngIf="initMovies.length > 0"
+                        class="banner">
+                        <div class="min-card d-flex flex-column text-center">
+                            <img width="160px" height="230px"
+                            src='{{ movie.Poster }}'/>
+                            <div class="desc">
+                                <small>{{ movie.Title }}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </p-carousel>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+.text-animation {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.line {
+    box-sizing: border-box;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.typing-animation {
+    animation: blinkCursor 300ms steps(40) infinite normal, typing 2s steps(40) 1s normal both;
+}
+
+
+.min-card {
+    width: 160px;
+}
+.banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.desc {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    } to {
+        width: 8em;
+    }
+}
+
+@keyframes blinkCursor {
+    from {
+        border-right-color: rgba(255, 255, 255, 0.75);
+    } to {
+        border-right-color: transparent;
+    }
+}
+
+@media(max-width: 768px){
+    
+}

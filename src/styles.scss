@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap');
+@import "primeicons/primeicons.css";
+
+:root {
+    --main-color: #2A323D;
+}
+
+::selection{
+    background-color: rgb(70, 70, 100);
+}
+
+*{
+    font-family: 'Lato', sans-serif !important;
+}
+
+[data-bs-theme=dark] {
+    --bs-dark-bg-subtle: rgb(15, 15, 15) !important;
+    --bs-tertiary-bg-rgb: 35, 35, 35 !important;
+}
+
+
+
+// custom ----------------------------------------------
+
+.page-container {
+    margin: 7rem 7rem;
+}
+
+.btn-outline-secondary {
+    --bs-btn-color: rgb(175, 175, 175) !important;
+}
+
+.btn-border-none {
+    border: none !important;
+}
+
+.btn-border-none:hover {
+    background-color: rgb(50, 50, 50) !important;
+}
+
+.card {
+    --bs-card-bg: rgb(35, 35, 35) !important;
+}
+
+.glass-effect {
+    background: linear-gradient(135deg, var(--main-color), #212529);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+
+
+// mobile ----------------------------------------------
+
+@media(max-width: 768px){
+    .page-container {
+        margin: 7rem 2rem;
+    }
+}
