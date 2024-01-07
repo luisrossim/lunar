@@ -1,22 +1,29 @@
-<div class="page-container">
+<div class="container-xxl page-container">
     <div class="ani-center text-animation">
-        <p class="line typing-animation">lunar home works</p>
+        <p class="line typing-animation">
+            lunar home works<i class="bi bi-stars ms-2"></i>
+        </p>
     </div>
-    <div *ngIf="initMovies.length == 0">
-        <div class="banner">
-            <p-skeleton width="70vw" height="150px" [style]="{background: '#222222'}">
+
+    <div *ngIf="loading">
+        <div class="d-flex flex-column align-items-center gap-3">
+            <p-skeleton width="90vw" height="350px"
+            [style]="{background: '#111111'}">
+            </p-skeleton>
+            <p-skeleton width="20vw" height="70px"
+            [style]="{background: '#111111'}">
             </p-skeleton>
         </div>
     </div>
-    <div *ngIf="initMovies.length > 0">
-        <div pAnimateOnScroll enterClass="scalein" leaveClass="fadeout"
-        class="card animation-duration-1000 animation-ease-in-out">
+
+    <div *ngIf="initMovies.length > 0 && !loading">
+        <div pAnimateOnScroll enterClass="scalein" leaveClass="fadeout" class="card rounded-4 animation-duration-1000 animation-ease-in-out">
             <p-carousel [value]="initMovies"
                 [numVisible]="7" [numScroll]="7"
                 [circular]="false" [responsiveOptions]="responsiveOptions">
                 <ng-template let-movie pTemplate="item">
                     <div class="banner">
-                        <div class="min-card d-flex flex-column text-center">
+                        <div pAnimateOnScroll enterClass="flipright" leaveClass="fadeout" class="min-card d-flex flex-column text-center animation-duration-1000 animation-ease-in-out">
                             <div class="box-img">
                                 <a [routerLink]="'movie/'+movie.imdbID">
                                     <img src='{{ movie.Poster }}'/>
@@ -31,4 +38,14 @@
             </p-carousel>
         </div>
     </div>
+</div>
+
+<div class="bg-white">
+    <section class="container-xxl img-section">
+        <img class="img-fluid" width="100%" height="" src="../../../assets/vladislav-ociacia-5-2.jpg" alt="">
+        <div class="mini-card rounded-3 glass-effect-2 sob">
+            <p>aaaaaaaaa</p>
+            <p>bbbbbbbbbbbbbbbbbbbbbbb</p>
+        </div>
+    </section>
 </div>

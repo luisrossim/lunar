@@ -10,6 +10,7 @@ import { MovieService } from '../../services/movie.service';
 export class HomeComponent {
   initMovies: Movie[] = []
   responsiveOptions: any[] | undefined;
+  loading: boolean = true
 
   constructor(
     private movieService: MovieService
@@ -18,6 +19,9 @@ export class HomeComponent {
   ngOnInit(): void {
     this.fetchInitMovies();
     this.responsiveSlide();
+    setTimeout(() => {
+      this.loading = false
+    }, 800)
   }
 
   private fetchInitMovies(): void {
@@ -39,27 +43,22 @@ export class HomeComponent {
         numScroll: 7
       },
       {
-        breakpoint: '1700px',
+        breakpoint: '1600px',
         numVisible: 6,
         numScroll: 6
       },
       {
-        breakpoint: '1500px',
+        breakpoint: '1450px',
         numVisible: 5,
         numScroll: 5
       },
       {
-        breakpoint: '1300px',
+        breakpoint: '1200px',
         numVisible: 4,
         numScroll: 4
       },
       {
-        breakpoint: '1150px',
-        numVisible: 3,
-        numScroll: 3
-      },
-      {
-        breakpoint: '950px',
+        breakpoint: '1020px',
         numVisible: 2,
         numScroll: 2
       },

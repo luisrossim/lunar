@@ -19,7 +19,7 @@
 }
 
 .typing-animation {
-    animation: blinkCursor 300ms steps(40) infinite normal, typing 2s steps(40) 1s normal both;
+    animation: blinkCursor 500ms steps(40) infinite normal, typing 3s steps(40) 1s normal both;
 }
 
 .card {
@@ -61,13 +61,29 @@
     overflow-wrap: break-word;
 }
 
+.img-section {
+    position: relative;
+}
+
+.sob {
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    transform: translate(-10%, -50%);
+}
+
+.mini-card {
+    padding: 3rem;
+    width: 400px;
+    height: 200px;
+}
 
 
 @keyframes typing {
     from {
         width: 0;
     } to {
-        width: 8em;
+        width: 9.4em;
     }
 }
 
