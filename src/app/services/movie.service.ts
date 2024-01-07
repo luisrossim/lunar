@@ -8,8 +8,8 @@ import { Search } from '../model/search';
   providedIn: 'root'
 })
 export class MovieService {
-  urlInit = "http://www.omdbapi.com/?apikey=e8db2703&s=The+Walking+Dead"
-  urlByID = "http://www.omdbapi.com/?apikey=e8db2703&i="
+  urlInit = "https://www.omdbapi.com/?apikey=e8db2703&s=The+Walking+Dead"
+  urlByID = "https://www.omdbapi.com/?apikey=e8db2703&i="
 
   
   constructor(
