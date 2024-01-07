@@ -1,6 +1,7 @@
 export class Movie {
     constructor(
         public Title?: string,
+        public imdbID?: string,
         public Year?: string,
         public Rated?: string,
         public Released?: string,

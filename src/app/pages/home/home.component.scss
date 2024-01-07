@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+.ani-center {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
 .line {
     box-sizing: border-box;
     border-right: 2px solid rgba(255, 255, 255, 0.75);
@@ -16,10 +22,33 @@
     animation: blinkCursor 300ms steps(40) infinite normal, typing 2s steps(40) 1s normal both;
 }
 
+.card {
+    border: none;
+}
 
 .min-card {
     width: 160px;
 }
+
+.min-card img {
+    width: 160px;
+    height: 230px;
+    margin: 1.2rem 0rem 1rem 0rem;
+    border-radius: 0.7rem;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.box-img {
+    border-radius: 0.7rem;
+    position: relative;
+}
+
+.box-img:hover img {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
 .banner {
     display: flex;
     flex-direction: row;
@@ -31,6 +60,8 @@
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
+
+
 
 @keyframes typing {
     from {
@@ -49,5 +80,22 @@
 }
 
 @media(max-width: 768px){
-    
+    .card {
+        background-color: transparent;
+    }
+}
+
+@media(max-width: 425px){
+    .min-card img {
+        width: 120px;
+        height: 180px;
+    }
+
+    .min-card {
+        width: 120px;
+    }
+
+    .page-container {
+        margin: 7rem 0rem;
+    }
 }

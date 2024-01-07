@@ -10,7 +10,6 @@ import { MovieService } from '../../services/movie.service';
 export class HomeComponent {
   initMovies: Movie[] = []
   responsiveOptions: any[] | undefined;
-  loading: boolean = true;
 
   constructor(
     private movieService: MovieService
@@ -30,23 +29,37 @@ export class HomeComponent {
         console.log(error)
       }
     });
-    this.loading = false;
   }
 
   responsiveSlide() {
     this.responsiveOptions = [
       {
-        breakpoint: '1199px',
+        breakpoint: '1900px',
+        numVisible: 7,
+        numScroll: 7
+      },
+      {
+        breakpoint: '1700px',
+        numVisible: 6,
+        numScroll: 6
+      },
+      {
+        breakpoint: '1500px',
+        numVisible: 5,
+        numScroll: 5
+      },
+      {
+        breakpoint: '1300px',
         numVisible: 4,
-        numScroll: 1
+        numScroll: 4
       },
       {
-        breakpoint: '991px',
+        breakpoint: '1150px',
         numVisible: 3,
-        numScroll: 1
+        numScroll: 3
       },
       {
-        breakpoint: '855px',
+        breakpoint: '950px',
         numVisible: 2,
         numScroll: 2
       },
