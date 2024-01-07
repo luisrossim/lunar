@@ -1,51 +1,43 @@
-<div class="container-xxl page-container">
-    <div class="ani-center text-animation">
-        <p class="line typing-animation">
-            lunar home works<i class="bi bi-stars ms-2"></i>
-        </p>
-    </div>
-
-    <div *ngIf="loading">
-        <div class="d-flex flex-column align-items-center gap-3">
-            <p-skeleton width="90vw" height="350px"
-            [style]="{background: '#111111'}">
-            </p-skeleton>
-            <p-skeleton width="20vw" height="70px"
-            [style]="{background: '#111111'}">
-            </p-skeleton>
+<div pAnimateOnScroll enterClass="fadein" leaveClass="fadeout" class="img-bg-1 animation-duration-1000 animation-ease-in-out">
+    <div class="container-xxl page-container img-bg-1 pt-3">
+        <div *ngIf="loading" class="pb-5 pt-5">
+            <div class="d-flex flex-column align-items-center gap-3">
+                <p-skeleton width="85vw" height="30vh"
+                [style]="{background: '#ababab30'}">
+                </p-skeleton>
+            </div>
         </div>
-    </div>
 
-    <div *ngIf="initMovies.length > 0 && !loading">
-        <div pAnimateOnScroll enterClass="scalein" leaveClass="fadeout" class="card rounded-4 animation-duration-1000 animation-ease-in-out">
-            <p-carousel [value]="initMovies"
-                [numVisible]="7" [numScroll]="7"
-                [circular]="false" [responsiveOptions]="responsiveOptions">
-                <ng-template let-movie pTemplate="item">
-                    <div class="banner">
-                        <div pAnimateOnScroll enterClass="flipright" leaveClass="fadeout" class="min-card d-flex flex-column text-center animation-duration-1000 animation-ease-in-out">
-                            <div class="box-img">
-                                <a [routerLink]="'movie/'+movie.imdbID">
-                                    <img src='{{ movie.Poster }}'/>
-                                </a>
-                            </div>
-                            <div class="desc">
-                                <small>{{ movie.Title }}</small>
+        <div *ngIf="initMovies.length > 0 && !loading" class="mt-5 slider">
+            <div pAnimateOnScroll enterClass="scalein" leaveClass="fadeout" class="glass-effect-3 rounded-4 animation-duration-1000 animation-ease-in-out">
+                <div class="ani-center text-animation">
+                    <p class="line typing-animation mb-0 mt-5">
+                        lunar home works<i class="bi bi-stars ms-2"></i>
+                    </p>
+                </div>
+                <p-carousel [value]="initMovies"
+                    [numVisible]="6" [numScroll]="6"
+                    [circular]="false" [responsiveOptions]="responsiveOptions">
+                    <ng-template let-movie pTemplate="item">
+                        <div class="banner">
+                            <div pAnimateOnScroll enterClass="flipright" leaveClass="fadeout" class="min-card d-flex flex-column text-center animation-duration-1000 animation-ease-in-out">
+                                <div class="box-img">
+                                    <a [routerLink]="'movie/'+movie.imdbID">
+                                        <img src='{{ movie.Poster }}'/>
+                                    </a>
+                                </div>
+                                <div class="desc">
+                                    <small>{{ movie.Title }}</small>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </ng-template>
-            </p-carousel>
+                    </ng-template>
+                </p-carousel>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="bg-white">
-    <section class="container-xxl img-section">
-        <img class="img-fluid" width="100%" height="" src="../../../assets/vladislav-ociacia-5-2.jpg" alt="">
-        <div class="mini-card rounded-3 glass-effect-2 sob">
-            <p>aaaaaaaaa</p>
-            <p>bbbbbbbbbbbbbbbbbbbbbbb</p>
-        </div>
-    </section>
-</div>
+<section class="">
+   
+</section>

@@ -21,7 +21,7 @@ export class HomeComponent {
     this.responsiveSlide();
     setTimeout(() => {
       this.loading = false
-    }, 800)
+    }, 1500)
   }
 
   private fetchInitMovies(): void {
@@ -39,31 +39,31 @@ export class HomeComponent {
     this.responsiveOptions = [
       {
         breakpoint: '1900px',
-        numVisible: 7,
-        numScroll: 7
-      },
-      {
-        breakpoint: '1600px',
         numVisible: 6,
         numScroll: 6
       },
       {
-        breakpoint: '1450px',
+        breakpoint: '1600px',
         numVisible: 5,
         numScroll: 5
       },
       {
-        breakpoint: '1200px',
+        breakpoint: '1450px',
         numVisible: 4,
         numScroll: 4
       },
       {
-        breakpoint: '1020px',
+        breakpoint: '1230px',
+        numVisible: 3,
+        numScroll: 3
+      },
+      {
+        breakpoint: '1050px',
         numVisible: 2,
         numScroll: 2
       },
       {
-        breakpoint: '768px',
+        breakpoint: '868px',
         numVisible: 1,
         numScroll: 1
       }

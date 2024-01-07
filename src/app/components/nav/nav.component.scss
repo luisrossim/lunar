@@ -4,24 +4,22 @@
 
 .navbar-brand {
     background-color: transparent !important;
+}
+
+.navbar-brand i {
+    background-color: transparent !important;
     margin: 0;
     padding: 0;
     transition: 0.5s;
     transition-timing-function: cubic-bezier(1,-0.80,-1,1.5);
 }
 
-.items-navbar a {
-    transition: 0.5s;
-    transition-timing-function: cubic-bezier(1,-0.80,-1,1.5);
+.navbar-brand:hover i {
+    rotate: 360deg;
 }
 
-.navbar:hover {
-    .navbar-brand {
-        rotate: 360deg;
-        font-size: 2rem;
-    }
-
-    .item {
-        font-size: 1.3rem;
+@media(max-width: 768px){
+    .container-xxl {
+        padding: 0.5rem 1rem 0rem 1rem !important;
     }
 }

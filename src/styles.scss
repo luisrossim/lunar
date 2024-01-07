@@ -14,7 +14,7 @@
 }
 
 [data-bs-theme=dark] {
-    --bs-dark-bg-subtle: rgb(15, 15, 15) !important;
+    --bs-dark-bg-subtle: #010203 !important;
     --bs-tertiary-bg-rgb: 70, 60, 70 !important;
 }
 
@@ -23,7 +23,7 @@
 // custom ----------------------------------------------
 
 section {
-    margin: 5rem 0rem;
+    margin: 7rem 0rem;
 }
 
 .container-xxl {
@@ -32,7 +32,7 @@ section {
 }
 
 .page-container {
-    margin: 7rem 7rem;
+    margin: 4.5rem 7rem 0rem 7rem;
 }
 
 .btn-outline-secondary {
@@ -49,9 +49,13 @@ section {
 }
 
 .p-carousel-next, .p-carousel-prev {
-    padding: 2rem 1rem;
-    margin: 0rem 1rem 0rem 1rem;
+    padding: 2rem 2rem;
+    margin: 0rem 3rem;
     border-radius: 0.5rem;
+    border: 1px solid rgb(255, 255, 255, 0.2);
+    background-color: rgb(255, 255, 255, 0.0);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .p-carousel-container {
@@ -60,7 +64,9 @@ section {
 
 .p-carousel-prev:hover, .p-carousel-next:hover {
     color: white;
-    background-color: rgb(50, 50, 50);
+    background-color: rgb(255, 255, 255, 0.20);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .p-carousel-indicators button {
@@ -73,13 +79,17 @@ section {
     --bs-card-bg: rgb(25, 25, 25) !important;
 }
 
+.slider {
+    padding-bottom: 5rem;
+}
+
 .p-carousel .p-carousel-indicators
 .p-carousel-indicator.p-highlight button {
     background-color: #DC3545;
 }
 
 .glass-effect {
-    background: #0f0f0f95;
+    background: #01020395;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
@@ -92,15 +102,29 @@ section {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.603);
 }
 
+.glass-effect-3 {
+    background: #0f0f0f30;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
 
 // mobile ----------------------------------------------
 
 @media(max-width: 768px){
     .page-container {
-        margin: 7rem 2rem;
+        margin: 6rem 2rem 0rem 2rem;
     }
 
     .p-carousel-next, .p-carousel-prev {
-        padding: 3rem 2rem;
+        margin: 0rem 1rem;
+        padding: 1.7rem 1.7rem;
+        border: none;
+        background-color: rgb(255, 255, 255, 0.0);
+    }
+
+    .p-carousel-prev:hover, .p-carousel-next:hover {
+        color: white;
+        background-color: rgb(255, 255, 255, 0.0);
     }
 }
