@@ -1,43 +1,61 @@
-<div pAnimateOnScroll enterClass="fadein" leaveClass="fadeout" class="img-bg-1 animation-duration-1000 animation-ease-in-out">
-    <div class="container-xxl page-container img-bg-1 pt-3">
-        <div *ngIf="loading" class="pb-5 pt-5">
-            <div class="d-flex flex-column align-items-center gap-3">
-                <p-skeleton width="85vw" height="30vh"
-                [style]="{background: '#ababab30'}">
-                </p-skeleton>
-            </div>
+<div *ngIf="loading" class="container-xxl page-container">
+    <div class="pb-5 pt-5">
+        <div class="d-flex flex-column align-items-center pt-5">
+            <p-skeleton width="85vw" height="40vh"
+            [style]="{background: '#ababab10'}">
+            </p-skeleton>
         </div>
+    </div>
+</div>
 
-        <div *ngIf="initMovies.length > 0 && !loading" class="mt-5 slider">
-            <div pAnimateOnScroll enterClass="scalein" leaveClass="fadeout" class="glass-effect-3 rounded-4 animation-duration-1000 animation-ease-in-out">
-                <div class="ani-center text-animation">
-                    <p class="line typing-animation mb-0 mt-5">
-                        lunar home works<i class="bi bi-stars ms-2"></i>
-                    </p>
-                </div>
-                <p-carousel [value]="initMovies"
-                    [numVisible]="6" [numScroll]="6"
-                    [circular]="false" [responsiveOptions]="responsiveOptions">
-                    <ng-template let-movie pTemplate="item">
-                        <div class="banner">
-                            <div pAnimateOnScroll enterClass="flipright" leaveClass="fadeout" class="min-card d-flex flex-column text-center animation-duration-1000 animation-ease-in-out">
-                                <div class="box-img">
-                                    <a [routerLink]="'movie/'+movie.imdbID">
-                                        <img src='{{ movie.Poster }}'/>
-                                    </a>
-                                </div>
-                                <div class="desc">
-                                    <small>{{ movie.Title }}</small>
+<div *ngIf="initMovies.length > 0 && !loading">
+    <div pAnimateOnScroll enterClass="fadein" leaveClass="fadeout" class="img-bg-1 animation-duration-1000 animation-ease-in-out">
+        <div class="container-xxl page-container">
+            <div class="pt-5 pb-5">
+                <div pAnimateOnScroll enterClass="scalein" leaveClass="fadeout" class="glass-effect-3 rounded-4 animation-duration-1000 animation-ease-in-out">
+                    <div class="ani-center text-animation">
+                        <p class="line typing-animation mb-0 mt-5">
+                            lunar home works<i class="bi bi-stars ms-2"></i>
+                        </p>
+                    </div>
+                    <p-carousel [value]="initMovies"
+                        [numVisible]="6" [numScroll]="6"
+                        [circular]="false" [responsiveOptions]="responsiveOptions">
+                        <ng-template let-movie pTemplate="item">
+                            <div class="banner">
+                                <div pAnimateOnScroll enterClass="flipright" leaveClass="fadeout" class="min-card d-flex flex-column text-center animation-duration-1000 animation-ease-in-out">
+                                    <div class="box-img">
+                                        <a [routerLink]="'movie/'+movie.imdbID">
+                                            <img src='{{ movie.Poster }}'/>
+                                        </a>
+                                    </div>
+                                    <div class="desc">
+                                        <small>{{ movie.Title }}</small>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </ng-template>
-                </p-carousel>
+                        </ng-template>
+                    </p-carousel>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<section class="">
-   
-</section>
+<div *ngIf="initMovies.length == 0" style="margin-top: 7rem;">
+    <p class="text-center text-bg-danger p-2">
+        Erro ao buscar filmes ou lista vazia!
+    </p>
+</div>
+
+<div class="bg-dark">
+    <div class="container-xxl section-container">
+        <div class="pb-5 pt-5">
+            <div class="d-flex flex-column align-items-center">
+                <p-skeleton width="85vw" height="40vh"
+                [style]="{background: '#ababab10'}">
+                </p-skeleton>
+            </div>
+        </div>
+    </div>
+</div>

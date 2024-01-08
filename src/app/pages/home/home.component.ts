@@ -21,7 +21,7 @@ export class HomeComponent {
     this.responsiveSlide();
     setTimeout(() => {
       this.loading = false
-    }, 1500)
+    }, 700)
   }
 
   private fetchInitMovies(): void {

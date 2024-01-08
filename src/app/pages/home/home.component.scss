@@ -84,7 +84,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-position: center;
+    background-position: left center;
     transition: all 0.5s;
 }
 
@@ -112,10 +112,22 @@
     .card {
         background-color: transparent;
     }
+
+    .img-bg-1 {
+        background-position: 20%;
+        background-attachment: scroll;
+    }
 }
 
 @media(max-width: 425px){
     .page-container {
         margin: 7rem 0rem 0rem 0rem;
+    }
+}
+
+@media(max-width: 380px){
+    .min-card img {
+        width: 130px;
+        height: 200px;
     }
 }

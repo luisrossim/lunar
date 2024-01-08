@@ -22,17 +22,17 @@
 
 // custom ----------------------------------------------
 
-section {
-    margin: 7rem 0rem;
-}
-
 .container-xxl {
     max-width: 1580px !important;
     padding: 0rem 58px !important;
 }
 
 .page-container {
-    margin: 4.5rem 7rem 0rem 7rem;
+    margin: 3.5rem 7rem 0rem 7rem;
+}
+
+.section-container {
+    margin: 0rem 7rem 0rem 7rem;
 }
 
 .btn-outline-secondary {
@@ -79,10 +79,6 @@ section {
     --bs-card-bg: rgb(25, 25, 25) !important;
 }
 
-.slider {
-    padding-bottom: 5rem;
-}
-
 .p-carousel .p-carousel-indicators
 .p-carousel-indicator.p-highlight button {
     background-color: #DC3545;
@@ -103,9 +99,9 @@ section {
 }
 
 .glass-effect-3 {
-    background: #0f0f0f30;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: #0f0f0f28;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
 }
 
 
@@ -119,12 +115,31 @@ section {
     .p-carousel-next, .p-carousel-prev {
         margin: 0rem 1rem;
         padding: 1.7rem 1.7rem;
-        border: none;
         background-color: rgb(255, 255, 255, 0.0);
     }
 
     .p-carousel-prev:hover, .p-carousel-next:hover {
         color: white;
-        background-color: rgb(255, 255, 255, 0.0);
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+@media(max-width: 380px){
+    .p-carousel-next, .p-carousel-prev {
+        padding: 0rem;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.0);
+    }
+
+    .p-carousel-prev {
+        margin-left: 1rem;
+    }
+
+    .p-carousel-next {
+        margin-right: 1rem;
+    }
+
+    .p-carousel-next:hover, .p-carousel-prev:hover {
+        background-color: rgba(255, 255, 255, 0.0);
     }
 }
