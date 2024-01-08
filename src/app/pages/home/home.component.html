@@ -12,7 +12,7 @@
     <div pAnimateOnScroll enterClass="fadein" leaveClass="fadeout" class="img-bg-1 animation-duration-1000 animation-ease-in-out">
         <div class="container-xxl page-container">
             <div class="pt-5 pb-5">
-                <div pAnimateOnScroll enterClass="scalein" leaveClass="fadeout" class="glass-effect-3 rounded-4 animation-duration-1000 animation-ease-in-out">
+                <div pAnimateOnScroll enterClass="scalein" leaveClass="fadeout" class="glass-effect-2 rounded-4 animation-duration-1000 animation-ease-in-out">
                     <div class="ani-center text-animation">
                         <p class="line typing-animation mb-0 mt-5">
                             lunar home works<i class="bi bi-stars ms-2"></i>
@@ -23,7 +23,7 @@
                         [circular]="false" [responsiveOptions]="responsiveOptions">
                         <ng-template let-movie pTemplate="item">
                             <div class="banner">
-                                <div pAnimateOnScroll enterClass="flipright" leaveClass="fadeout" class="min-card d-flex flex-column text-center animation-duration-1000 animation-ease-in-out">
+                                <div pAnimateOnScroll enterClass="flipleft" leaveClass="fadeout" class="min-card d-flex flex-column text-center animation-duration-1000 animation-ease-in-out">
                                     <div class="box-img">
                                         <a [routerLink]="'movie/'+movie.imdbID">
                                             <img src='{{ movie.Poster }}'/>
@@ -42,18 +42,46 @@
     </div>
 </div>
 
-<div *ngIf="initMovies.length == 0" style="margin-top: 7rem;">
+<div *ngIf="initMovies.length == 0 && !loading" style="margin-top: 7rem;">
     <p class="text-center text-bg-danger p-2">
         Erro ao buscar filmes ou lista vazia!
     </p>
 </div>
 
-<div class="bg-dark">
+<div class="bg-fake pt-5">
     <div class="container-xxl section-container">
         <div class="pb-5 pt-5">
             <div class="d-flex flex-column align-items-center">
                 <p-skeleton width="85vw" height="40vh"
-                [style]="{background: '#ababab10'}">
+                [style]="{background: '#0F1A2020'}">
+                </p-skeleton>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="space position-relative bg-fake">
+    <div pAnimateOnScroll enterClass="scalein" leaveClass="fadeout" class="img-section animation-duration-1000 animation-ease-in-out">
+        <div class="container-xxl section-container">
+            <div pAnimateOnScroll enterClass="fadeinright" leaveClass="fadeoutright" class="glass-effect-1 mini-card d-flex flex-column gap-3 text-center animation-duration-2000 animation-ease-in-out">
+                <i class="bi bi-stars fs-1"></i>
+                <a class="text-decoration-none" href="https://www.artstation.com/guweiz" target="_blank">Z.W. GUWEIZ</a>
+            </div>
+            <div pAnimateOnScroll enterClass="flipup" leaveClass="fadeout" class="glass-effect-1 mini-card-2 animation-duration-3000 animation-ease-in-out">
+                <a href="https://www.artstation.com/guweiz" target="_blank">
+                    <img width="120px" src="https://cdna.artstation.com/p/users/avatars/000/136/170/large/cd4e6acc3de9a95046a932eead960d09.jpg?1449285434" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-fake">
+    <div class="container-xxl section-container">
+        <div class="pb-5 pt-5">
+            <div class="d-flex flex-column align-items-center">
+                <p-skeleton width="85vw" height="40vh"
+                [style]="{background: '#0F1A2020'}">
                 </p-skeleton>
             </div>
         </div>

@@ -2,7 +2,7 @@
 @import "primeicons/primeicons.css";
 
 :root {
-    --main-color: #2A323D;
+    --main-color: #05070a;
 }
 
 ::selection{
@@ -14,8 +14,7 @@
 }
 
 [data-bs-theme=dark] {
-    --bs-dark-bg-subtle: #010203 !important;
-    --bs-tertiary-bg-rgb: 70, 60, 70 !important;
+    --bs-dark-bg-subtle: var(--main-color) !important;
 }
 
 
@@ -51,9 +50,8 @@
 .p-carousel-next, .p-carousel-prev {
     padding: 2rem 2rem;
     margin: 0rem 3rem;
-    border-radius: 0.5rem;
-    border: 1px solid rgb(255, 255, 255, 0.2);
-    background-color: rgb(255, 255, 255, 0.0);
+    border-radius: 3rem;
+    background-color: rgba(175, 175, 175, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
@@ -64,7 +62,7 @@
 
 .p-carousel-prev:hover, .p-carousel-next:hover {
     color: white;
-    background-color: rgb(255, 255, 255, 0.20);
+    background-color: rgb(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
@@ -85,16 +83,23 @@
 }
 
 .glass-effect {
-    background: #01020395;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: #0102033b;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+}
+
+.glass-effect-1 {
+    background: #33333328;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(64, 64, 64, 0.614);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.603);
 }
 
 .glass-effect-2 {
-    background: rgba(255, 255, 255, 0.24);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgb(121, 121, 121);
+    background: #0f0f0f28;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.603);
 }
 
@@ -115,7 +120,8 @@
     .p-carousel-next, .p-carousel-prev {
         margin: 0rem 1rem;
         padding: 1.7rem 1.7rem;
-        background-color: rgb(255, 255, 255, 0.0);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
     }
 
     .p-carousel-prev:hover, .p-carousel-next:hover {
@@ -127,8 +133,7 @@
 @media(max-width: 380px){
     .p-carousel-next, .p-carousel-prev {
         padding: 0rem;
-        border: none;
-        background-color: rgba(255, 255, 255, 0.0);
+        background-color: rgba(255, 255, 255, 0);
     }
 
     .p-carousel-prev {
