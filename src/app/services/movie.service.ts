@@ -9,6 +9,7 @@ import { Search } from '../model/search';
 })
 export class MovieService {
   urlInit = "https://www.omdbapi.com/?apikey=e8db2703&s=The+Walking+Dead"
+  urlByName = "https://www.omdbapi.com/?apikey=e8db2703&t="
   urlByID = "https://www.omdbapi.com/?apikey=e8db2703&i="
 
   
@@ -23,5 +24,9 @@ export class MovieService {
 
   getMovieById(id: string): Observable<Movie> {
     return this.http.get<Movie>(`${this.urlByID}${id}`);
+  }
+
+  getMovieByName(name: string): Observable<Movie> {
+    return this.http.get<Movie>(`${this.urlByName}${name}`);
   }
 }

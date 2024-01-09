@@ -1,20 +1,20 @@
-<div *ngIf="loading" class="container-xxl page-container">
+<div *ngIf="initMovies.length == 0" class="container-xxl page-container mb-3">
     <div class="pb-5 pt-5">
         <div class="d-flex flex-column align-items-center pt-5">
-            <p-skeleton width="85vw" height="40vh"
+            <p-skeleton width="85vw" height="50vh"
             [style]="{background: '#ababab10'}">
             </p-skeleton>
         </div>
     </div>
 </div>
 
-<div *ngIf="initMovies.length > 0 && !loading">
+<div *ngIf="initMovies.length > 0">
     <div pAnimateOnScroll enterClass="fadein" leaveClass="fadeout" class="img-bg-1 animation-duration-1000 animation-ease-in-out">
-        <div class="container-xxl page-container">
-            <div class="pt-5 pb-5">
-                <div pAnimateOnScroll enterClass="scalein" leaveClass="fadeout" class="glass-effect-2 rounded-4 animation-duration-1000 animation-ease-in-out">
+        <div class="container-xxl page-container mb-3">
+            <div class="section-1-space">
+                <div pAnimateOnScroll enterClass="scalein" leaveClass="fadeout" class="glass-effect-2 rounded-4 animation-duration-2000 animation-ease-out">
                     <div class="ani-center text-animation">
-                        <p class="line typing-animation mb-0 mt-5">
+                        <p class="line typing-animation">
                             lunar home works<i class="bi bi-stars ms-2"></i>
                         </p>
                     </div>
@@ -23,8 +23,8 @@
                         [circular]="false" [responsiveOptions]="responsiveOptions">
                         <ng-template let-movie pTemplate="item">
                             <div class="banner">
-                                <div pAnimateOnScroll enterClass="flipleft" leaveClass="fadeout" class="min-card d-flex flex-column text-center animation-duration-1000 animation-ease-in-out">
-                                    <div class="box-img">
+                                <div pAnimateOnScroll enterClass="flipleft" leaveClass="fadeout" class="min-card d-flex flex-column text-center animation-duration-2000 animation-ease-out">
+                                    <div>
                                         <a [routerLink]="'movie/'+movie.imdbID">
                                             <img src='{{ movie.Poster }}'/>
                                         </a>
@@ -42,32 +42,38 @@
     </div>
 </div>
 
-<div *ngIf="initMovies.length == 0 && !loading" style="margin-top: 7rem;">
-    <p class="text-center text-bg-danger p-2">
-        Erro ao buscar filmes ou lista vazia!
-    </p>
-</div>
-
-<div class="bg-fake pt-5">
+<div class="bg-fake section-2">
     <div class="container-xxl section-container">
-        <div class="pb-5 pt-5">
-            <div class="d-flex flex-column align-items-center">
-                <p-skeleton width="85vw" height="40vh"
-                [style]="{background: '#0F1A2020'}">
-                </p-skeleton>
+        <div pAnimateOnScroll enterClass="zoomin" leaveClass="fadeinright" class="background-card d-flex gap-3 animation-duration-1000 animation-ease-in-out">
+            <div pAnimateOnScroll enterClass="fadeinleft" leaveClass="fadeinright" class="min-card best-movie d-flex justify-content-center animation-duration-3000 gap-3 animation-ease-in-out">
+                <div>
+                    <a [routerLink]="'movie/'+bestMovie.imdbID">
+                        <img src='{{ bestMovie.Poster }}'/>
+                    </a>
+                </div>
+                <div class="best-movie-desc">
+                    <strong>{{ bestMovie.Title }}</strong><br>
+                    <small>{{ bestMovie.Year }}</small><br>
+                    <p>{{ bestMovie.Plot }}</p>
+                </div>
+            </div>
+            <div pAnimateOnScroll enterClass="fadein" leaveClass="fadeinright" class="best-movie-section-2 d-flex flex-column gap-2 animation-duration-3000 animation-ease-in-out">
+                <strong>{{ bestMovie.Title }}</strong>
+                <small>{{ bestMovie.Year }}</small>
+                <p>{{ bestMovie.Plot }}</p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="space position-relative bg-fake">
-    <div pAnimateOnScroll enterClass="scalein" leaveClass="fadeout" class="img-section animation-duration-1000 animation-ease-in-out">
+<div class="space position-relative bg-fake section-3">
+    <div pAnimateOnScroll enterClass="fadein" leaveClass="fadeout" class="img-section animation-duration-1000 animation-ease-in-out">
         <div class="container-xxl section-container">
-            <div pAnimateOnScroll enterClass="fadeinright" leaveClass="fadeoutright" class="glass-effect-1 mini-card d-flex flex-column gap-3 text-center animation-duration-2000 animation-ease-in-out">
+            <div pAnimateOnScroll enterClass="fadeinright" leaveClass="fadeoutright" class="glass-effect-1 mini-card d-flex flex-column gap-3 text-center animation-duration-3000 animation-ease-in-out">
                 <i class="bi bi-stars fs-1"></i>
                 <a class="text-decoration-none" href="https://www.artstation.com/guweiz" target="_blank">Z.W. GUWEIZ</a>
             </div>
-            <div pAnimateOnScroll enterClass="flipup" leaveClass="fadeout" class="glass-effect-1 mini-card-2 animation-duration-3000 animation-ease-in-out">
+            <div pAnimateOnScroll enterClass="zoomin" leaveClass="fadeout" class="glass-effect-1 mini-card-2 animation-duration-3000 animation-ease-in-out">
                 <a href="https://www.artstation.com/guweiz" target="_blank">
                     <img width="120px" src="https://cdna.artstation.com/p/users/avatars/000/136/170/large/cd4e6acc3de9a95046a932eead960d09.jpg?1449285434" alt="">
                 </a>

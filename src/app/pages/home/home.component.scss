@@ -8,10 +8,10 @@
 .ani-center {
     display: flex;
     justify-content: center;
-    margin-bottom: 1rem;
 }
 
 .line {
+    margin: 2rem 0rem 0rem 0rem;
     box-sizing: border-box;
     border-right: 2px solid rgba(0, 0, 0, 0.75);
     white-space: nowrap;
@@ -19,32 +19,53 @@
 }
 
 .typing-animation {
-    animation: blinkCursor 500ms steps(40) infinite normal, typing 3s steps(40) 0s forwards normal;
-}
-
-.card {
-    border: none;
-}
-
-.min-card {
-    width: 160px;
+    animation: blinkCursor 500ms steps(40) infinite normal, typing 3s steps(40) 0s forwards normal !important;
 }
 
 .min-card img {
-    width: 160px;
-    height: 230px;
-    margin: 1.2rem 0rem 1rem 0rem;
+    width: 140px;
+    height: 210px;
+    margin: 1rem 0rem 1rem 0rem;
     border-radius: 0.7rem;
+    position: relative;
     background-size: cover;
     transition: all 0.3s;
 }
 
-.box-img {
-    border-radius: 0.7rem;
-    position: relative;
+.section-1-space {
+    padding: 7.5rem 0rem 5rem 0rem;
 }
 
-.box-img:hover img {
+.section-2 img {
+    width: 170px;
+    height: 260px;
+    margin: 0;
+}
+
+.best-movie {
+    border: 1px solid white;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    flex-direction: row;
+    align-items: center;
+}
+
+.background-card {
+    padding: 2rem;
+    border-radius: 1.5rem;
+    background-color: #080E13;
+}
+
+.best-movie-desc {
+    text-align: start;
+}
+
+.best-movie-section-2 {
+    align-items: end;
+    max-width: 300px;
+}
+
+.min-card img:hover {
     cursor: pointer;
     transform: scale(1.1);
 }
@@ -122,6 +143,10 @@
     background-color: var(--main-color);
 }
 
+.section-2 {
+    padding: 6rem 0rem;
+}
+
 
 @keyframes typing {
     from {
@@ -139,13 +164,25 @@
     }
 }
 
+
+
+@media(max-width: 1200px){
+    .background-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .best-movie-section-2 {
+        max-width: 900px;
+        align-items: center;
+    }
+
+}
+
+
 @media(max-width: 768px){
     .container-xxl {
         padding: 0rem 1rem !important;
-    }
-
-    .card {
-        background-color: transparent;
     }
 
     .img-bg-1 {
@@ -163,11 +200,15 @@
         top: 70%;
         left:5%;
     }
-}
 
-@media(max-width: 425px){
-    .page-container {
-        margin: 7rem 0rem 0rem 0rem;
+    .best-movie {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .best-movie-desc {
+        margin-top: 1rem;
+        text-align: center;
     }
 }
 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Movie } from '../../model/movie';
 import { MovieService } from '../../services/movie.service';
+import { SpacetoplusService } from '../../shared/utils/spacetoplus.service';
 
 @Component({
   selector: 'app-home',
@@ -9,20 +10,23 @@ import { MovieService } from '../../services/movie.service';
 })
 export class HomeComponent {
   initMovies: Movie[] = []
+  bestMovie: Movie = {}
   responsiveOptions: any[] | undefined;
   loading: boolean = true
 
+
   constructor(
-    private movieService: MovieService
+    private movieService: MovieService,
+    private spaceToPlusService: SpacetoplusService
   ) {}
+
 
   ngOnInit(): void {
     this.fetchInitMovies();
+    this.fetchBestMovie();
     this.responsiveSlide();
-    setTimeout(() => {
-      this.loading = false
-    }, 700)
   }
+
 
   private fetchInitMovies(): void {
     this.movieService.getInitMovies().subscribe({
@@ -34,6 +38,29 @@ export class HomeComponent {
       }
     });
   }
+
+
+  private fetchBestMovie() {
+    const temp_best_name = 'The Last Of Us';
+    const best_movie = this.spaceToPlusService.spaceToPlus(temp_best_name);
+    console.log(best_movie)
+    this.movieService.getMovieByName(best_movie).subscribe({
+      next: (resp) => {
+        this.bestMovie = resp
+      },
+      error: (error) => {
+        console.log(error)
+      }
+    });
+  }
+
+
+  timeOut() {
+     setTimeout(() => {
+       this.loading = false
+    }, 700)
+  }
+
 
   responsiveSlide() {
     this.responsiveOptions = [
