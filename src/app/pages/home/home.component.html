@@ -42,25 +42,61 @@
     </div>
 </div>
 
+<div>
+    <div class="container-xxl section-container search-section">
+        <div class="row">
+            <div pAnimateOnScroll enterClass="fadeinleft" leaveClass="fadeinright" class="col-md-8 col-12 search-section-1 animation-duration-3000 animation-ease-in-out">
+                <div class="row p-2">
+                    <div class="col-12 col-sm-7 col-lg-9">
+                        <p class="fs-4 fw-bold">Procurar filmes</p>
+                    </div>
+                    <div class="col-12 col-sm-5 col-lg-3 button-search">
+                        <a routerLink="search">
+                            <p class="text-center">
+                                clique aqui
+                            </p>
+                        </a>
+                    </div>
+                    <div class="col-12 text-body-tertiary">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi fuga sed explicabo esse vero, optio labore blanditiis voluptatem corrupti laudantium veritatis consequuntur sit laborum. Eligendi earum tenetur cumque sunt temporibus molestiae porro eos unde dolorem totam aperiam aut, atque maiores suscipit similique ipsum praesentium nesciunt est aliquam repellat deserunt officiis nam. Expedita recusandae possimus rerum non at deleniti ipsum perferendis ex laudantium, atque mollitia omnis voluptatibus iure laboriosam sunt cum dignissimos ipsam aperiam reiciendis consequuntur nobis!
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 col-12"></div>
+            <div pAnimateOnScroll enterClass="flipleft" leaveClass="fadeinright" class="col-md-3 col-12 col-img animation-duration-3000 animation-ease-in-out">
+                <img src="../../../assets/horrormovie.svg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="bg-fake section-2">
     <div class="container-xxl section-container">
         <div pAnimateOnScroll enterClass="zoomin" leaveClass="fadeinright" class="background-card d-flex gap-3 animation-duration-1000 animation-ease-in-out">
-            <div pAnimateOnScroll enterClass="fadeinleft" leaveClass="fadeinright" class="min-card best-movie d-flex justify-content-center animation-duration-3000 gap-3 animation-ease-in-out">
+            <div pAnimateOnScroll enterClass="scalein" leaveClass="fadeinright" class="min-card best-movie d-flex animation-duration-3000 gap-3 animation-ease-in-out">
                 <div>
                     <a [routerLink]="'movie/'+bestMovie.imdbID">
                         <img src='{{ bestMovie.Poster }}'/>
                     </a>
                 </div>
                 <div class="best-movie-desc">
-                    <strong>{{ bestMovie.Title }}</strong><br>
-                    <small>{{ bestMovie.Year }}</small><br>
-                    <p>{{ bestMovie.Plot }}</p>
+                    <p class="fs-4 fw-bold">
+                        {{ bestMovie.Title }}
+                    </p>
+                    <p class="text-body-secondary">2023</p>
+                    <p class="text-body-tertiary">
+                        {{ bestMovie.Plot }}
+                    </p>
                 </div>
             </div>
             <div pAnimateOnScroll enterClass="fadein" leaveClass="fadeinright" class="best-movie-section-2 d-flex flex-column gap-2 animation-duration-3000 animation-ease-in-out">
-                <strong>{{ bestMovie.Title }}</strong>
-                <small>{{ bestMovie.Year }}</small>
-                <p>{{ bestMovie.Plot }}</p>
+                <div>
+                    <p class="text-center">Lorem, ipsum dolor!</p>
+                </div>
+                <div class="d-flex gap-2 flex-column">
+                    <a href="#" class="p-1">---------</a>
+                    <a href="#" class="p-1">---------</a>
+                </div>
             </div>
         </div>
     </div>
@@ -73,22 +109,10 @@
                 <i class="bi bi-stars fs-1"></i>
                 <a class="text-decoration-none" href="https://www.artstation.com/guweiz" target="_blank">Z.W. GUWEIZ</a>
             </div>
-            <div pAnimateOnScroll enterClass="zoomin" leaveClass="fadeout" class="glass-effect-1 mini-card-2 animation-duration-3000 animation-ease-in-out">
+            <div pAnimateOnScroll enterClass="fadein" leaveClass="fadeout" class="glass-effect-1 mini-card-2 animation-duration-3000 animation-ease-in-out">
                 <a href="https://www.artstation.com/guweiz" target="_blank">
                     <img width="120px" src="https://cdna.artstation.com/p/users/avatars/000/136/170/large/cd4e6acc3de9a95046a932eead960d09.jpg?1449285434" alt="">
                 </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="bg-fake">
-    <div class="container-xxl section-container">
-        <div class="pb-5 pt-5">
-            <div class="d-flex flex-column align-items-center">
-                <p-skeleton width="85vw" height="40vh"
-                [style]="{background: '#0F1A2020'}">
-                </p-skeleton>
             </div>
         </div>
     </div>

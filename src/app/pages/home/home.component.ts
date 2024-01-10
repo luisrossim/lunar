@@ -43,7 +43,6 @@ export class HomeComponent {
   private fetchBestMovie() {
     const temp_best_name = 'The Last Of Us';
     const best_movie = this.spaceToPlusService.spaceToPlus(temp_best_name);
-    console.log(best_movie)
     this.movieService.getMovieByName(best_movie).subscribe({
       next: (resp) => {
         this.bestMovie = resp

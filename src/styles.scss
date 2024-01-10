@@ -34,8 +34,8 @@
     margin: 0rem 7rem 0rem 7rem;
 }
 
-.btn-outline-secondary {
-    --bs-btn-color: rgb(175, 175, 175) !important;
+.section-1-space {
+    padding: 7.5rem 0rem 5rem 0rem;
 }
 
 .btn-border-none {
@@ -43,6 +43,7 @@
 }
 
 .btn-outline-secondary {
+    --bs-btn-color: rgb(175, 175, 175) !important;
     --bs-btn-hover-bg: rgba(192, 192, 192, 0.150) !important;
     --bs-btn-hover-border-color: rgba(192, 192, 192, 0.150) !important;
 }
@@ -51,9 +52,17 @@
     padding: 2rem 2rem;
     margin: 0rem 3rem;
     border-radius: 3rem;
-    background-color: rgba(175, 175, 175, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+}
+
+.p-carousel-items-content button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
+    cursor: pointer;
+    background-color: rgba(52, 65, 85, 0.6);
+}
+
+.p-disabled, .p-component:disabled {
+    opacity: 0.3;
 }
 
 .p-carousel-container {
@@ -62,7 +71,7 @@
 
 .p-carousel-prev:hover, .p-carousel-next:hover {
     color: white;
-    background-color: rgb(255, 255, 255, 0.2);
+    background-color: rgba(52, 65, 85, 0.9) !important;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
@@ -73,10 +82,6 @@
     width: 1rem;
 }
 
-.card {
-    --bs-card-bg: rgb(25, 25, 25) !important;
-}
-
 .p-carousel .p-carousel-indicators
 .p-carousel-indicator.p-highlight button {
     background-color: #DC3545;
@@ -84,8 +89,8 @@
 
 .glass-effect {
     background: #0102033b;
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .glass-effect-1 {

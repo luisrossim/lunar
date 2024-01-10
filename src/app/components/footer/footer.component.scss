@@ -6,7 +6,14 @@ p {
     padding: 2rem 7rem;
 }
 
+.bg-footer {
+    color: var(--main-color);
+    background-color: rgb(255, 255, 255);
+}
 
+.footer-icons a {
+    color: var(--main-color);
+}
 
 
 @media(max-width: 768px){
