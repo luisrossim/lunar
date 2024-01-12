@@ -10,12 +10,17 @@ a {
     font-size: 1rem;
 }
 
+.form-control {
+    background-color: transparent;
+}
+
 .title {
     flex-direction: row;
 }
 
 .search {
-    background-color: #212529;
+    background-color: #21252900;
+    border: 1px solid #43474b;
     transition: all 200ms;
 }
 

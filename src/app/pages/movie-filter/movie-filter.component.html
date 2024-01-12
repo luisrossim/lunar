@@ -1,5 +1,5 @@
 <form [formGroup]="formFilter" class="">
-    <div class="title bg-dark d-flex justify-content-between py-3">
+    <div class="title bg-dark d-flex justify-content-between pt-3">
         <div class="fs-5 fw-bold">Procurar filmes</div>
         <div>
             <a class="text-center" (click)="onClean()">
@@ -22,7 +22,7 @@
         <div class="col-lg-5 last">
             <div class="form-item d-flex flex-column">
                 <label for="float-label" class="form-label">Tipo</label>
-                <p-dropdown formControlName="type" [showClear]="true" [options]="types" optionLabel="name" id="float-label"></p-dropdown>
+                <p-dropdown formControlName="type" [showClear]="false" [options]="types" optionLabel="name" id="float-label"></p-dropdown>
             </div>
         </div>
     </div>

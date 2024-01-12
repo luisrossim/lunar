@@ -18,8 +18,15 @@ export class MovieManagementComponent {
   
   }
 
-  showListComp(movies: Movie[]){
-    this.unitsList = movies
+  showListComp(filters: any){
+    this.movieService.getMoviesBySearch(filters).subscribe({
+      next: (resp) => {
+        this.unitsList = resp.Search!
+      },
+      error: (error) => {
+        console.log(error)
+      }
+    });
     this.showList.next(true);
   }
 }

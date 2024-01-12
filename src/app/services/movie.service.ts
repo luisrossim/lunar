@@ -27,7 +27,7 @@ export class MovieService {
     return this.http.get<Movie>(`${this.api}&t=${name}`);
   }
 
-  getMoviesBySearch(name: string, year: string, type: string): Observable<Search> {
-    return this.http.get<Search>(`${this.api}${name}${year}${type}`);
+  getMoviesBySearch(filters: any): Observable<Search> {
+    return this.http.get<Search>(`${this.api}${filters.name}${filters.year}${filters.type}`);
   }
 }

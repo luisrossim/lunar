@@ -15,6 +15,7 @@ export class MovieFilterComponent {
   formFilter!: FormGroup;
   types: any[] = types
   movies: Movie[] = []
+  filters: any
 
   constructor(
     private formBuilder: FormBuilder,
@@ -31,29 +32,22 @@ export class MovieFilterComponent {
   }
 
   onSubmit(): void {
-    let _name = '&s=' + this.formFilter.controls['name'].value
-    let _year = ''
-    let _type = ''
-
-    if(this.formFilter.controls['year'].value != '') {
-      _year = '&y=' + this.formFilter.controls['year'].value
+    this.filters = {
+      name: '&s=' + this.formFilter.controls['name'].value,
+      year: '',
+      type: ''
     }
 
-    if(this.formFilter.controls['type'].value != '') {
+    if(this.formFilter.controls['year'].value != '' && this.formFilter.controls['year'].value != null) {
+      this.filters.year = '&y=' + this.formFilter.controls['year'].value
+    }
+
+    if(this.formFilter.controls['type'].value != '' && this.formFilter.controls['type'].value != null) {
       const type = this.formFilter.controls['type'].value
-      _type = '&type=' + type.name
+      this.filters.type = '&type=' + type.name
     }
 
-    this.movieService.getMoviesBySearch(_name,_year,_type).subscribe({
-      next: (resp) => {
-        this.movies = resp.Search!
-      },
-      error: (error) => {
-        console.log(error)
-      }
-    });
-
-    this.onFiltered.emit(this.movies);
+    this.onFiltered.emit(this.filters);
   }
 
   onClean(): void {
