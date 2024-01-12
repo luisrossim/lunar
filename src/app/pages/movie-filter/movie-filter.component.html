@@ -1,1 +1,36 @@
-<p>movie-filter works!</p>
+<form [formGroup]="formFilter" class="">
+    <div class="title bg-dark d-flex justify-content-between py-3">
+        <div class="fs-5 fw-bold">Procurar filmes</div>
+        <div>
+            <a class="text-center" (click)="onClean()">
+                <p class="m-0 py-2">
+                    <i class="bi bi-eraser-fill p-2">Limpar</i>
+                </p>
+            </a>
+        </div>
+    </div>
+    <div class="form-items row">
+        <div class="col-lg-3 col-md-5 col-sm-12">
+            <label for="name" class="form-label">Título <span class="text-body-tertiary">(em inglês)</span></label>
+            <input type="text" formControlName="name" class="form-control" id="name">
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+        <div class="col-lg-3 col-md-5 col-sm-12 col-ano">
+            <label for="year" class="form-label">Ano</label>
+            <input type="text" formControlName="year" class="form-control" formControlName="year" id="year">
+        </div>
+        <div class="col-lg-5 last">
+            <div class="form-item d-flex flex-column">
+                <label for="float-label" class="form-label">Tipo</label>
+                <p-dropdown formControlName="type" [showClear]="true" [options]="types" optionLabel="name" id="float-label"></p-dropdown>
+            </div>
+        </div>
+    </div>
+    <div class="row search">
+        <div class="col m-0 p-0">
+            <a class="text-center" (click)="onSubmit()">
+                <p class="m-0 py-2">Pesquisar</p>
+            </a>
+        </div>
+    </div>
+</form>

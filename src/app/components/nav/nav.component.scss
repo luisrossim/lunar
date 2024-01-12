@@ -1,6 +1,11 @@
 .navbar-brand {
     background-color: transparent !important;
     margin: 0.2rem 0rem;
+    padding: 0;
+}
+
+.container-fluid {
+    padding: 0;
 }
 
 .navbar-brand i {

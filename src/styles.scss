@@ -114,6 +114,39 @@
     -webkit-backdrop-filter: blur(15px);
 }
 
+.p-dropdown-items-wrapper ul {
+    padding-left: 0rem !important;
+    padding-bottom: 0rem !important;
+}
+
+.p-dropdown-label {
+    padding: 0.3rem 2rem 0.3rem 0.6rem;
+}
+
+form {
+    border: 1px solid #343c47;
+    border-radius: 1rem;
+    margin-bottom: 5rem;
+}
+
+form .title {
+    padding: 0.5rem 2rem;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+
+form .search {
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+form .row {
+    margin: 0rem 0rem 0rem 0rem;
+}
+
+.form-items {
+    padding: 2.5rem 2rem 2rem 2rem;
+}
 
 // mobile ----------------------------------------------
 

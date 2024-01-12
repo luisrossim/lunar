@@ -1,7 +1,8 @@
 <div class="container-xxl page-container">
     <div class="section-1-space">
-        <p>movie-management works!</p>
-    <app-movie-filter></app-movie-filter>
-    <app-movie-list></app-movie-list>
+        
+    <app-movie-filter (onFiltered)="showListComp($event)"></app-movie-filter>
+    <app-movie-list *ngIf="(showList | async)" [unitsList]="unitsList"></app-movie-list>
+    
     </div>
 </div>

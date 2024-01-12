@@ -1,1 +1,9 @@
-<p>movie-list works!</p>
+<div class="row">
+    <div *ngFor="let movie of unitsList" class="col text-center">
+        <div pAnimateOnScroll enterClass="fadein" leaveClass="fadeout" class="min-card animation-duration-2000 animation-ease-in-out">
+            <a href='/movie/{{movie.imdbID}}'>
+                <img src='{{ movie.Poster }}'/>
+            </a>
+        </div>
+    </div>
+</div>

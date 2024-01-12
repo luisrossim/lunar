@@ -4,6 +4,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AnimateOnScrollModule } from 'primeng/animateonscroll';
 import { CarouselModule } from 'primeng/carousel';
 import { SkeletonModule } from 'primeng/skeleton';
+import { InputTextModule } from 'primeng/inputtext';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { DropdownModule } from 'primeng/dropdown';
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { SkeletonModule } from 'primeng/skeleton';
     ReactiveFormsModule,
     AnimateOnScrollModule,
     CarouselModule,
-    SkeletonModule
+    SkeletonModule,
+    InputTextModule,
+    RadioButtonModule,
+    DropdownModule
   ],
 })
 export class SharedModule { }

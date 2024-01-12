@@ -8,10 +8,7 @@ import { Search } from '../model/search';
   providedIn: 'root'
 })
 export class MovieService {
-  urlInit = "https://www.omdbapi.com/?apikey=e8db2703&s=The+Walking+Dead"
-  urlByName = "https://www.omdbapi.com/?apikey=e8db2703&t="
-  urlByID = "https://www.omdbapi.com/?apikey=e8db2703&i="
-
+  api = "https://www.omdbapi.com/?apikey=e8db2703"
   
   constructor(
     private http: HttpClient
@@ -19,14 +16,18 @@ export class MovieService {
 
 
   getInitMovies(): Observable<Search> {
-    return this.http.get<Search>(this.urlInit);
+    return this.http.get<Search>(`${this.api}&s=The+Walking+Dead`);
   }
 
   getMovieById(id: string): Observable<Movie> {
-    return this.http.get<Movie>(`${this.urlByID}${id}`);
+    return this.http.get<Movie>(`${this.api}&i=${id}`);
   }
 
   getMovieByName(name: string): Observable<Movie> {
-    return this.http.get<Movie>(`${this.urlByName}${name}`);
+    return this.http.get<Movie>(`${this.api}&t=${name}`);
+  }
+
+  getMoviesBySearch(name: string, year: string, type: string): Observable<Search> {
+    return this.http.get<Search>(`${this.api}${name}${year}${type}`);
   }
 }

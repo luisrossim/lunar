@@ -23,7 +23,7 @@
                         [circular]="false" [responsiveOptions]="responsiveOptions">
                         <ng-template let-movie pTemplate="item">
                             <div class="banner">
-                                <div pAnimateOnScroll enterClass="flipleft" leaveClass="fadeout" class="min-card d-flex flex-column text-center animation-duration-2000 animation-ease-out">
+                                <div pAnimateOnScroll enterClass="flipleft" leaveClass="fadeout" class="min-card d-flex flex-column text-center animation-duration-2000 animation-ease-in-out">
                                     <div>
                                         <a [routerLink]="'movie/'+movie.imdbID">
                                             <img src='{{ movie.Poster }}'/>
@@ -64,7 +64,7 @@
             </div>
             <div class="col-md-1 col-12"></div>
             <div pAnimateOnScroll enterClass="flipleft" leaveClass="fadeinright" class="col-md-3 col-12 col-img animation-duration-3000 animation-ease-in-out">
-                <img src="../../../assets/horrormovie.svg" alt="">
+                <i class="bi bi-film fs-1"></i>
             </div>
         </div>
     </div>
@@ -80,11 +80,11 @@
                     </a>
                 </div>
                 <div class="best-movie-desc">
+                    <p class="fs-5 text-danger-emphasis">Best of 2023</p>
                     <p class="fs-4 fw-bold">
                         {{ bestMovie.Title }}
                     </p>
-                    <p class="text-body-secondary">2023</p>
-                    <p class="text-body-tertiary">
+                    <p class="text-body-tertiary pt-3">
                         {{ bestMovie.Plot }}
                     </p>
                 </div>
@@ -109,7 +109,7 @@
                 <i class="bi bi-stars fs-1"></i>
                 <a class="text-decoration-none" href="https://www.artstation.com/guweiz" target="_blank">Z.W. GUWEIZ</a>
             </div>
-            <div pAnimateOnScroll enterClass="fadein" leaveClass="fadeout" class="glass-effect-1 mini-card-2 animation-duration-3000 animation-ease-in-out">
+            <div pAnimateOnScroll enterClass="flipleft" leaveClass="fadeout" class="glass-effect-1 mini-card-2 animation-duration-2000 animation-ease-in-out">
                 <a href="https://www.artstation.com/guweiz" target="_blank">
                     <img width="120px" src="https://cdna.artstation.com/p/users/avatars/000/136/170/large/cd4e6acc3de9a95046a932eead960d09.jpg?1449285434" alt="">
                 </a>

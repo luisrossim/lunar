@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Movie } from '../../model/movie';
 
 @Component({
   selector: 'app-movie-list',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './movie-list.component.scss'
 })
 export class MovieListComponent {
-
+  @Input() unitsList: Movie[] = [];
 }
