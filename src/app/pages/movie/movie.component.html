@@ -1,5 +1,18 @@
-<div class="page-container space">
-    <div class="min-card">
-        <img src='{{ movie.Poster }}'/>
+<div class="container space">
+    <div *ngIf="movie.Poster" class="movie-details row">
+        <div class="col-md-4 col-sm-12">
+            <img class="img-fluid rounded-3" src='{{ movie.Poster }}'/>
+        </div>
+        <div class="col-md-8 col-sm-12">
+            <p class="fs-2">{{ movie.Title }}</p>
+            <div class="text-secondary-emphasis">
+                <p>{{ movie.Year }}</p>
+                <p>{{ movie.Genre }}</p>
+                <p>imdb note: {{ movie.imdbRating }}</p>
+                <p>{{movie.Plot}}</p>
+                <p>Atores: {{ movie.Actors }}</p>
+                <p>Diretor: {{ movie.Director }}</p>
+            </div>
+        </div>
     </div>
 </div>

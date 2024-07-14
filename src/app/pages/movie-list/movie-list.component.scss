@@ -8,13 +8,18 @@
 }
 
 .min-card {
+    transition: all 0.3s;
     padding: 0.5rem;
     margin-bottom: 1rem;
     border-radius: 0.3rem;
 }
 
+.min-card:hover {
+    transform: scale(1.4);
+}
+
 .img-background {
-    background-image: url(../../../assets/bg-2.jpg);
+    // background-image: url('/assets/bg-2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     padding: 2.5rem;

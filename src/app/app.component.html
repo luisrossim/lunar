@@ -1,3 +1,6 @@
 <app-nav></app-nav>
-<router-outlet></router-outlet>
+<router-outlet>
+    <div class="opacidade" *ngIf='loading == true'></div>
+    <div class='loading' *ngIf='loading == true'></div>
+</router-outlet>
 <app-footer></app-footer>

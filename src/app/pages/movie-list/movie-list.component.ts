@@ -8,4 +8,5 @@ import { Movie } from '../../model/movie';
 })
 export class MovieListComponent {
   @Input() unitsList: Movie[] = [];
+  @Input() totalResults: string = '';
 }

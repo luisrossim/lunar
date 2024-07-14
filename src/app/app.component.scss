@@ -1,0 +1,26 @@
+.loading {
+    animation: is-rotating 1s infinite;
+    border: 6px solid #e5e5e5;
+    border-radius: 50%;
+    border-top-color: var(--main-color);
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    z-index: 999999;
+}
+.opacidade{
+    position: fixed;
+    z-index: 999998;
+    background-color: #000000;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.6;
+}
+
+@keyframes is-rotating {
+    to {
+        transform: rotate(1turn);
+    }
+}

@@ -1,8 +1,9 @@
-<div pAnimateOnScroll enterClass="fadein" leaveClass="fadeout" class="img-background rounded-2 animation-duration-3000 animation-ease-in-out">
+<div pAnimateOnScroll enterClass="fadein" leaveClass="fadeout" class="img-background animation-duration-3000 animation-ease-in-out">
+    <p class="text-secondary mb-3">Exibindo 10 de {{totalResults}} resultados</p>
     <div class="row">
         <div *ngFor="let movie of unitsList" class="col text-center">
             <div pAnimateOnScroll enterClass="scalein" leaveClass="fadeout" 
-            class="d-flex flex-column gap-2 min-card glass-effect-1 animation-duration-3000 animation-ease-in-out">
+            class="d-flex flex-column gap-2 min-card animation-duration-3000 animation-ease-in-out">
                 <a href='/movie/{{movie.imdbID}}'>
                     <img src='{{ movie.Poster }}'/>
                 </a>

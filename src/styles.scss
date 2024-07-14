@@ -2,7 +2,7 @@
 @import "primeicons/primeicons.css";
 
 :root {
-    --main-color: #05070a;
+    --main-color: #10141a;
 }
 
 ::selection{
@@ -21,9 +21,10 @@
 
 // custom ----------------------------------------------
 
-.container-xxl {
+.container {
     max-width: 1580px !important;
-    padding: 0rem 58px !important;
+    padding-right: 58px !important;
+    padding-left: 58px !important;
 }
 
 .page-container {
@@ -126,31 +127,6 @@
 
 .p-dropdown-label {
     padding: 0.3rem 2rem 0.3rem 0.6rem;
-}
-
-form {
-    border: 1px solid #343c47;
-    border-radius: 1rem;
-    margin-bottom: 5rem;
-}
-
-form .title {
-    padding: 0.5rem 2rem;
-    border-top-right-radius: 1rem;
-    border-top-left-radius: 1rem;
-}
-
-form .search {
-    border-bottom-right-radius: 1rem;
-    border-bottom-left-radius: 1rem;
-}
-
-form .row {
-    margin: 0rem 0rem 0rem 0rem;
-}
-
-.form-items {
-    padding: 2.5rem 2rem 2rem 2rem;
 }
 
 // mobile ----------------------------------------------

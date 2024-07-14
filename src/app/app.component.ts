@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UtilitiesService } from './services/utilities.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'lunar';
+  loading = this.utilities.getLoading();
+
+  constructor(public utilities: UtilitiesService) {}
+
+  ngAfterContentChecked(): void {
+    this.loading = this.utilities.getLoading();
+  }
+
 }

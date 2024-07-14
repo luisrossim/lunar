@@ -32,22 +32,13 @@ export class MovieFilterComponent {
   }
 
   onSubmit(): void {
-    this.filters = {
-      name: '&s=' + this.formFilter.controls['name'].value,
-      year: '',
-      type: ''
-    }
-
-    if(this.formFilter.controls['year'].value != '' && this.formFilter.controls['year'].value != null) {
-      this.filters.year = '&y=' + this.formFilter.controls['year'].value
-    }
-
-    if(this.formFilter.controls['type'].value != '' && this.formFilter.controls['type'].value != null) {
-      const type = this.formFilter.controls['type'].value
-      this.filters.type = '&type=' + type.name
-    }
-
-    this.onFiltered.emit(this.filters);
+    const filters = {
+      name: this.formFilter.controls['name'].value ? '&s=' + this.formFilter.controls['name'].value : '',
+      year: this.formFilter.controls['year'].value ? '&y=' + this.formFilter.controls['year'].value : '',
+      type: this.formFilter.controls['type'].value?.name ? '&type=' + this.formFilter.controls['type'].value.name : '',
+    };
+  
+    this.onFiltered.emit(filters);
   }
 
   onClean(): void {

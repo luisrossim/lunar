@@ -11,6 +11,7 @@ import { Movie } from '../../model/movie';
 export class MovieManagementComponent {
   showList = new BehaviorSubject(false);
   unitsList: Movie[] = [];
+  total: string = ''
 
   constructor(private movieService: MovieService){ }
 
@@ -21,7 +22,8 @@ export class MovieManagementComponent {
   showListComp(filters: any){
     this.movieService.getMoviesBySearch(filters).subscribe({
       next: (resp) => {
-        this.unitsList = resp.Search!
+        this.unitsList = resp.Search!,
+        this.total = resp.totalResults!
       },
       error: (error) => {
         console.log(error)
