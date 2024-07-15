@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Movie } from '../../model/movie';
 import { MovieService } from '../../services/movie.service';
 import { SpacetoplusService } from '../../shared/utils/spacetoplus.service';
+import { UtilitiesService } from '../../services/utilities.service';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,8 @@ export class HomeComponent {
 
   constructor(
     private movieService: MovieService,
-    private spaceToPlusService: SpacetoplusService
+    private spaceToPlusService: SpacetoplusService,
+    private utilities: UtilitiesService
   ) {}
 
 
@@ -60,6 +62,9 @@ export class HomeComponent {
     }, 700)
   }
 
+  get onLoading() {
+    return this.utilities.getLoading;
+  }
 
   responsiveSlide() {
     this.responsiveOptions = [

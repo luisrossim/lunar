@@ -4,7 +4,7 @@
         <div *ngFor="let movie of unitsList" class="col text-center">
             <div pAnimateOnScroll enterClass="scalein" leaveClass="fadeout" 
             class="d-flex flex-column gap-2 min-card animation-duration-3000 animation-ease-in-out">
-                <a href='/movie/{{movie.imdbID}}'>
+                <a [routerLink]="['/movie', movie.imdbID]">
                     <img src='{{ movie.Poster }}'/>
                 </a>
                 <small class="pb-1">
