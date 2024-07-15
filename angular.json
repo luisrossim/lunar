@@ -63,18 +63,7 @@
                   "maximumError": "5kb"
                 }
               ],
-              "optimization": {
-                "styles": {
-                  "minify": true,
-                  "inlineCritical": false
-                  },
-                "fonts": true
-              },
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true
+              "outputHashing": "all"
             },
             "development": {
               "optimization": false,
@@ -120,6 +109,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
